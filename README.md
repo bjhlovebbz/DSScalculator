@@ -23,10 +23,10 @@ The script requires several R libraries, primarily:
 ```text
 .
 ├── scripts/
-│   └── DSS_calculation_script.R    # Main calculation script
+│   └── DSScalculator.R    # Main calculation script
 ├── data/
-│   ├── corrected_example.xlsx      # Raw inhibition data
-│   └── trend_example.xlsx          # Directionality/weights
+│   ├── corrected_example.xlsx      # inhibition data
+│   └── trend_example.xlsx          # directionality
 └── README.md
 
 ```
@@ -35,7 +35,7 @@ The script requires several R libraries, primarily:
 
 1. **Data Ingestion:** Loads `corrected_example.xlsx` and `trend_example.xlsx` from the `data/` directory.
 2. **Formatting:** Reshapes data into a long-format "tidy" data frame.
-3. **Parameter Estimation:** * Executes the core logic located in `./scripts/DSS_calculation_script.R`.
+3. **Parameter Estimation:** * Executes the core logic located in `./scripts/DSScalculator.R`.
 * Estimates initial parameters (Slope, Min, Max, IC50).
 * Applies constraints to IC50 and Max values to ensure biological relevance.
 
@@ -52,7 +52,7 @@ The script requires several R libraries, primarily:
 To run the analysis, ensure your R working directory is set to the root of this project. You can execute the script via terminal or RStudio:
 
 ```r
-source("./scripts/DSS_calculation_script.R")
+source("./scripts/DSScalculator.R")
 
 ```
 

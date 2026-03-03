@@ -2,12 +2,12 @@
 
 This script automates the processing of drug screening data, fitting four-parameter logistic (4PL) regression models to calculate IC50, AUC, and specialized Drug Sensitivity Scores (DSS).
 
-### Requirements
+## Requirements
 
 * R ≥ 4.1 (recommended)
 * macOS / Linux / Windows supported
 
-### Project Structure
+## Project Structure
 
 ```text
 DSSCalculator/
@@ -25,7 +25,7 @@ DSSCalculator/
 
 ```
 
-### Input Files
+## Input Files
 
 Place the following files inside the data/ directory:
 * corrected_example.xlsx
@@ -42,6 +42,22 @@ You may replace them with your own data as long as:
 git clone <YOUR_REPOSITORY_URL>
 cd DSSCalculator
 ```
+
+### 2. Install required R packages
+
+```r
+Rscript R/install_deps.R
+```
+This installs all required packages automatically.
+
+### 3. Run the DSS calculation
+
+```r
+Rscript R/install_deps.R
+```
+
+
+
 
 
 ### Usage Note

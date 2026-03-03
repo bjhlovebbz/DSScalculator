@@ -1,3 +1,18 @@
+############################################################
+# DSSCalculator – Dependency Installer
+#
+# Description:
+# Installs all required CRAN packages for running the
+# DSSCalculator pipeline.
+#
+# Usage:
+#   Rscript R/install_deps.R
+#
+# Author: Xuechun Gao
+# License: GNU GPL-3
+# Year: 2026
+############################################################
+
 pkgs <- c(
   "readxl","writexl","dplyr","tibble","tidyr",
   "ggplot2",

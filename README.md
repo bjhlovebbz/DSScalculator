@@ -10,13 +10,10 @@ This script automates the processing of drug screening data, fitting four-parame
 * **Visualization:** Automatically generates dose-response plots with `ggplot2` and exports them to a multi-page PDF.
 * **Batch Processing:** Handles multiple drugs and screen conditions simultaneously using `dplyr` grouping and `lapply`.
 
-### Prerequisites
+### Requirements
 
-The script requires several R libraries, primarily:
-
-* **Data Wrangling:** `tidyverse` (dplyr, tidyr, tibble), `readxl`, `writexl`.
-* **Modeling:** `drc`, `minpack.lm`, `caTools`, `MESS`.
-* **Plotting:** `ggplot2`, `gridExtra`.
+R ≥ 4.1 (recommended)
+macOS / Linux / Windows supported
 
 ### Project Structure
 

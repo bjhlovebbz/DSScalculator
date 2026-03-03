@@ -64,14 +64,30 @@ The script automatically writes results into the data/ directory:
 * DSS_auc_ic50_all_reserved.xlsx
 
 
-
-### Warnings During Curve Fitting
+## Warnings During Curve Fitting
 
 You may see warnings such as:
 
 ```r
-source("./scripts/DSScalculator.R")
+Convergence failure
+non-finite value supplied by optim
+```
+These originate from nonlinear curve fitting (nls / nlsLM).
 
+Important:
+* The script continues running.
+* Failed fits return NA values.
+* The pipeline does not stop unless a critical error occurs.
+
+This behavior is intentional to ensure robustness across large drug panels.
+
+## Running Inside R (Optional)
+
+If you prefer running inside an interactive R session:
+
+```r
+source("R/install_deps.R")
+source("R/run_dss.R")
 ```
 
-> **Note:** Ensure your local file paths in the script are updated to match your directory structure (pointing to `./data/`) before running.
+Make sure you are in the repository root before running.

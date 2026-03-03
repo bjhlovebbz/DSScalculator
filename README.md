@@ -12,8 +12,8 @@ This script automates the processing of drug screening data, fitting four-parame
 
 ### Requirements
 
-R ≥ 4.1 (recommended)
-macOS / Linux / Windows supported
+* R ≥ 4.1 (recommended)
+* macOS / Linux / Windows supported
 
 ### Project Structure
 

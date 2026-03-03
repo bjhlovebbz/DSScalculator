@@ -72,9 +72,7 @@ You may see warnings such as:
 Convergence failure
 non-finite value supplied by optim
 ```
-These originate from nonlinear curve fitting (nls / nlsLM), and the script continues running.
-
-This behavior is intentional to ensure robustness across large drug panels.
+These originate from nonlinear curve fitting (nls / nlsLM), and the code will continue running. This behavior is intentional to ensure robustness across large drug panels.
 
 ## Running Inside R (Optional)
 

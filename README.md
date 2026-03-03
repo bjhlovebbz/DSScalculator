@@ -72,12 +72,7 @@ You may see warnings such as:
 Convergence failure
 non-finite value supplied by optim
 ```
-These originate from nonlinear curve fitting (nls / nlsLM).
-
-Important:
-* The script continues running.
-* Failed fits return NA values.
-* The pipeline does not stop unless a critical error occurs.
+These originate from nonlinear curve fitting (nls / nlsLM), and the script continues running.
 
 This behavior is intentional to ensure robustness across large drug panels.
 

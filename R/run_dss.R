@@ -1,37 +1,30 @@
-# GNU General Public License v3.0 (https://www.gnu.org/licenses/gpl-3.0.en.html)
-# 
-# DSSCalculator: Dose–response based DSS / AUC / IC50abs computation
-# 
-# Written by Xuechun Gao <sherronxc@gmail.com>, 2026
+############################################################
+# DSSCalculator – Dose–Response DSS Computation Pipeline
 #
-# This script performs:
-# - Data preprocessing from Excel input
+# Description:
+# This script computes Drug Sensitivity Score (DSS), AUC,
+# and IC50abs from dose–response data stored in Excel files.
+#
+# Features:
 # - Nonlinear dose–response curve fitting
 # - IC50 estimation
-# - DSS score calculation
-# - AUC and IC50abs computation
-# - Progress monitoring with single-line console updates
+# - DSS and AUC calculation
+# - Clean single-line progress display (no console spam)
+# - Robust handling of failed curve fits
 #
-# The script is designed to:
-# - Avoid console spam (single progress line only)
-# - Continue execution even if individual curve fits fail
-# - Run from repository root (no setwd() required)
+# Expected input (in data/ folder):
+#   corrected_example.xlsx
+#   trend_example.xlsx
 #
-# Input:
-#   data/corrected_example.xlsx
-#   data/trend_example.xlsx
+# Output (written to data/ folder):
+#   normalized_trend.xlsx
+#   formatted_trend.xlsx
+#   DSS_auc_ic50_all_reserved.xlsx
 #
-# Output:
-#   data/normalized_trend.xlsx
-#   data/formatted_trend.xlsx
-#   data/DSS_auc_ic50_all_reserved.xlsx
-#
-# Functions defined in this file:
-#   dss() – computes DSS score from fitted dose–response parameters
-#
-# Dependencies:
-#   readxl, writexl, dplyr, tidyr, tibble, drc,
-#   data.table, caTools, MESS, minpack.lm, ggplot2
+# Author: Xuechun Gao
+# License: GNU GPL-3
+# Year: 2026
+############################################################
 
 suppressPackageStartupMessages({
   library(readxl)

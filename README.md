@@ -18,12 +18,17 @@ This script automates the processing of drug screening data, fitting four-parame
 ### Project Structure
 
 ```text
-.
-├── scripts/
-│   └── DSScalculator.R    # Main calculation script
+DSSCalculator/
+│
+├── R/
+│   ├── install_deps.R
+│   └── run_dss.R
+│
 ├── data/
-│   ├── corrected_example.xlsx      # inhibition data
-│   └── trend_example.xlsx          # directionality
+│   ├── corrected_example.xlsx
+│   └── trend_example.xlsx
+│
+├── LICENSE
 └── README.md
 
 ```

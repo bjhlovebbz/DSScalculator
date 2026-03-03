@@ -33,19 +33,14 @@ DSSCalculator/
 
 ```
 
-### Pipeline Workflow
+### Input Files
 
-1. **Data Ingestion:** Loads `corrected_example.xlsx` and `trend_example.xlsx` from the `data/` directory.
-2. **Formatting:** Reshapes data into a long-format "tidy" data frame.
-3. **Parameter Estimation:** * Executes the core logic located in `./scripts/DSScalculator.R`.
-* Estimates initial parameters (Slope, Min, Max, IC50).
-* Applies constraints to IC50 and Max values to ensure biological relevance.
-
-
-4. **Scoring:** Calculates **DSS_type 2** (default) which incorporates the area under the curve and normalization.
-5. **Output:** * Saves formatted results to `formatted_trend.xlsx`.
-* Saves final scores (DSS, AUC, IC50abs) to `DSS_auc_ic50_all_reserved.xlsx`.
-* Exports curve plots to `dose_response_curves.pdf`.
+Place the following files inside the data/ directory:
+* corrected_example.xlsx
+* trend_example.xlsx
+You may replace them with your own data as long as:
+* File names remain the same
+* Column structure is compatible with the script
 
 
 

@@ -2,14 +2,6 @@
 
 This script automates the processing of drug screening data, fitting four-parameter logistic (4PL) regression models to calculate IC50, AUC, and specialized Drug Sensitivity Scores (DSS).
 
-### Main Features
-
-* **Data Normalization:** Multiplies raw inhibition data by trend coefficients (e.g., to handle directionality).
-* **4PL Curve Fitting:** Uses the `nls` (Port algorithm) and `minpack.lm::nlsLM` to robustly fit dose-response data, even with noisy samples.
-* **DSS Calculation (BREEZE-based):** Implements three types of DSS based on the area under the fitted curve relative to tested concentration ranges.
-* **Visualization:** Automatically generates dose-response plots with `ggplot2` and exports them to a multi-page PDF.
-* **Batch Processing:** Handles multiple drugs and screen conditions simultaneously using `dplyr` grouping and `lapply`.
-
 ### Requirements
 
 * R ≥ 4.1 (recommended)
@@ -41,6 +33,12 @@ Place the following files inside the data/ directory:
 You may replace them with your own data as long as:
 * File names remain the same
 * Column structure is compatible with the script
+
+## Quick Start
+
+### 1. Clone the repository
+git clone <YOUR_REPOSITORY_URL>
+cd DSSCalculator
 
 
 

@@ -37,9 +37,11 @@ You may replace them with your own data as long as:
 ## Quick Start
 
 ### 1. Clone the repository
+
+```r
 git clone <YOUR_REPOSITORY_URL>
 cd DSSCalculator
-
+```
 
 
 ### Usage Note

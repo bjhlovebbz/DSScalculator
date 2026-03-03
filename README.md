@@ -53,16 +53,20 @@ This installs all required packages automatically.
 ### 3. Run the DSS calculation
 
 ```r
-Rscript R/install_deps.R
+Rscript R/run_dss.R
 ```
 
+## Output Files
+
+The script automatically writes results into the data/ directory:
+* normalized_trend.xlsx
+* formatted_trend.xlsx
+* DSS_auc_ic50_all_reserved.xlsx
 
 
+### Warnings During Curve Fitting
 
-
-### Usage Note
-
-To run the analysis, ensure your R working directory is set to the root of this project. You can execute the script via terminal or RStudio:
+You may see warnings such as:
 
 ```r
 source("./scripts/DSScalculator.R")

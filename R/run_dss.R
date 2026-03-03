@@ -353,7 +353,6 @@ for (i in seq_len(n_total)) {
   }
   
   # --------- [PLACEHOLDER RETURN] ----------
-  # 先给一个占位返回，防止脚本结构看不懂
   results_list[[i]] <- data.frame(
     DRUG_NAME   = drug_name,
     SCREEN_NAME = screen_name,

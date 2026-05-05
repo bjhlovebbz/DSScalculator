@@ -17,7 +17,6 @@ DSSCalculator/
 │   └── run_dss.R
 │
 ├── data/
-│   ├── met_plate.xlsx         # Raw data input
 │   └── trend_example.xlsx     # Trend direction matrix
 │
 ├── LICENSE

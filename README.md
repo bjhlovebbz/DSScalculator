@@ -1,6 +1,6 @@
 # DSScalculator
 
-This script automates the processing of drug screening data, fitting four-parameter logistic (4PL) regression models to calculate IC50, AUC, and specialized Drug Sensitivity Scores (DSS).
+This repository provides an automated, end-to-end pipeline for processing high-throughput drug screening data. It performs per-plate normalization against controls, fits four-parameter logistic (4PL) regression models, and calculates absolute IC50, Area Under the Curve (AUC), and specialized Drug Sensitivity Scores (DSS).
 
 ## Requirements
 
@@ -17,8 +17,8 @@ DSSCalculator/
 │   └── run_dss.R
 │
 ├── data/
-│   ├── met_plate.xlsx
-│   └── trend_example.xlsx
+│   ├── met_plate.xlsx         # Raw data input
+│   └── trend_example.xlsx     # Trend direction matrix
 │
 ├── LICENSE
 └── README.md
@@ -27,12 +27,13 @@ DSSCalculator/
 
 ## Input Files
 
-Place the following files inside the data/ directory:
-* corrected_example.xlsx
-* trend_example.xlsx
-You may replace them with your own data as long as:
-* File names remain the same
-* Column structure is compatible with the script
+Place the following required files inside the data/ directory:
+
+1. met_plate.xlsx: Your raw screening data. It must contain a sheet named "Background Subtracted", and include "Activated" and "Not Activated" in the DRUG_NAME column for per-plate normalization.
+
+2. trend_example.xlsx: A matrix defining the expected trend directions (+1 or -1) for each feature.
+
+Note: You may replace these with your own data, provided the file names remain the same and the column structures match the expected format.
 
 ## Quick Start
 
@@ -58,10 +59,23 @@ Rscript R/run_dss.R
 
 ## Output Files
 
-The script automatically writes results into the data/ directory:
-* normalized_trend.xlsx
-* formatted_trend.xlsx
-* DSS_auc_ic50_all_reserved.xlsx
+The script automatically generates and writes the following results into the data/ directory:
+
+1. Intermediate Files (Preprocessing & Normalization):
+
+* corrected_example.xlsx: Data normalized against plate controls (Activated/Not Activated).
+
+* normalized_trend.xlsx: Normalized data multiplied by trend directions.
+
+* formatted_trend.xlsx: Long-format data ready for curve fitting.
+
+2. Final Results:
+
+* DSS_auc_ic50_all_original.xlsx: Raw calculation results (DSS, AUC, IC50) before trend adjustment.
+
+* DSS_auc_ic50_all_reserved.xlsx: Final results with trend signs applied.
+
+* dose_response_curves_perplate.pdf: High-quality visualizations of all fitted dose-response curves for quality control.
 
 
 ## Warnings During Curve Fitting

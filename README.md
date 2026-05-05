@@ -17,7 +17,7 @@ DSSCalculator/
 │   └── run_dss.R
 │
 ├── data/
-│   ├── corrected_example.xlsx
+│   ├── met_plate.xlsx
 │   └── trend_example.xlsx
 │
 ├── LICENSE
